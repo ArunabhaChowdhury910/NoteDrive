@@ -30,7 +30,7 @@
             
 
             <!-- MIDDLE PANNEL -->
-            <div class="flex justify-center rounded-lg  w-full h-screen bg-sub_background">
+            <div class="flex justify-center rounded-lg border w-full h-screen bg-sub_background">
                 <notes/>
             </div>
             
