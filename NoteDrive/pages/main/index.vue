@@ -1,31 +1,50 @@
 <template>
-    <div class="flex">
-        <div class="bg-white h-screen w-fit p-1 shadow-lg">
-            <ul class="mt-5 space-y-8 p-4 ">
-                <li class="hidden">A</li>
-                <li><Icon name="prime:plus" class="cursor-pointer my-3 text-3xl border border-dark_main_color "/></li>
-                <li><img src="@/assets/svgs/chatgpt.svg" alt="ChatGPT SVG" /></li>
-                <li><Icon name="material-symbols:nest-farsight-weather" class="cursor-pointer my-3 text-3xl "/></li>
-                <li><Icon name="material-symbols:clock-loader-10" class="cursor-pointer my-3 text-3xl"/></li>
-            </ul>
-            <ul class="mt-56 w-full h-full flex-col justify-stretch items-end p-4 space-y-8">
-                <li><Icon name="material-symbols:account-box" class="cursor-pointer my-3 text-3xl "/></li>
-                <li><Icon name="solar:trash-bin-minimalistic-2-bold" class="cursor-pointer my-3 text-3xl "/></li>
-            </ul>
-        </div>  
-        <div class="w-full h-full bg-white">
-            <div class="ml-5 py-4 font-Berkshire  p-2 flex gap-32 text-3xl">
-                <h1>Notes</h1>
-                <h1>Todo-List</h1>
-            </div> 
-        </div>
-        <div class="rounded-lg w-full h-full">
+    <!-- THIS IS THE WHOLE BODY -->
+    <div class=" w-screen h-screen bg-white">
 
+        <!-- HEADING -->
+        <div class="w-full h-fit bg-white">
+            <div class="w-full px-3  font-Berkshire flex items-center justify-between text-2xl">
+                <h1 class="m-2">NOTES</h1>
+                <div class="flex space-x-5">
+                    <p class="">Hello</p>
+                    <p>User_001</p>
+                </div>
+            </div> 
+            <div class="flex p-1.5">
+                <ul class="items-center ml-3 justify-between gap-36 flex">
+                    <li class="cursor-pointer">File</li>
+                    <li class="cursor-pointer">Home</li>
+                    <li class="cursor-pointer">Insert</li>
+                    <li class="cursor-pointer">Draw</li>
+                    <li class="cursor-pointer">Time</li>
+                    <li class="cursor-pointer">Weather</li>
+                    <li class="cursor-pointer">ChatGpt</li>
+                </ul>
+            </div>
         </div>
-    </div>
+
+        <!-- MIDDLE -->
+        <div class="flex py-3 px-3">
+
+            
+
+            <!-- MIDDLE PANNEL -->
+            <div class="flex justify-center rounded-lg  w-full h-screen bg-sub_background">
+                <notes/>
+            </div>
+            
+            
+        </div>
+        
+    </div>  
+
+
+
 </template>
 
-<script>
+<script setup lang="ts">
+    import notes from '/components/cards/notes.vue';
 </script>
 
 <style scoped>
