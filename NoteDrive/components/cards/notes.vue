@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-screen p-2">
+  <div class="w-screen h-screen ">
       <div class="w-full h-screen p-2" ref="inputContainer" @input="handleInput" contenteditable="true">
       </div>
   </div>
@@ -14,15 +14,7 @@ export default defineComponent({
       const enteredText = (event.target as HTMLElement).textContent || '';
       console.log('Entered text:', enteredText);
 
-      // Save the selection range
-      const selection = window.getSelection()!;
-      const range = selection.getRangeAt(0).cloneRange();
-
-      // Perform any processing you need with the entered text
-
-      // Restore the selection range
-      selection.removeAllRanges();
-      selection.addRange(range);
+      
     },
   },
 });
