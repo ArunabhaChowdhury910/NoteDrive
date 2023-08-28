@@ -11,7 +11,7 @@
             <!-- HEADING -->
 
             <div class="p-3 space-y-3">
-                <h1 class="text-center text-7xl mt-3 font-Berkshire">Efficiency Elevated</h1>
+                <h1 class="text-center text-7xl mt-3 font-Playfair">Efficiency Elevated</h1>
                 <p class="text-center p-5 text-lg font-Nanum">Unleash creativity, enhance productivity. Elevate tasks, notes, and diaries seamlessly. Discover the fusion of organization and inspiration, transforming ordinary routines into extraordinary achievements. Welcome to a new realm of efficiency</p>
                 <div class=" flex justify-center mb-12 ">
                     <NuxtLink to="/main" class="hover:bg-dark_main_color border rounded-lg px-6 text-2xl bg-main_heading_background text-dark_main_color hover:text-white py-1.5">GET STARTED</NuxtLink>

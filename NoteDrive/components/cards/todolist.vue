@@ -22,7 +22,7 @@ watch(todos, (newVal) => {
 })
 
 const addTodo = () => {
-	if (input_content.value.trim() === '' || input_category.value === null) {
+	if (input_content.value.trim() === '') {
 		return
 	}
 
@@ -46,38 +46,44 @@ onMounted(() => {
 </script>
 
 <template>
-	<main class="space-y-4 p-6">
+	<main class="font-Montserrat p-6 bg-lightish rounded-lg">
 		
-		<section class="flex justify-center w-full">
-			<h2 class="title">
-				What's up, User_001
-			</h2>
-		</section>
+		<div class="space-y-4">
+			<section class="flex justify-center w-full">
+				<h2 class="title font-Montserrat text-lg">
+					What's up, User_001
+				</h2>
+			</section>
+	
+			<section class="space-y-2 ">
+				<h3>CREATE A TODO</h3>
+	
+				<form id="new-todo-form" @submit.prevent="addTodo" class="space-y-4">
+					<input type="text" name="content" id="content" placeholder="Enter Todo" class="text-Dark w-full px-2 rounded bg-very_light" v-model="input_content" />
+					<input type="submit" value="Add todo" class="bg-Dark text-Whitish rounded-lg cursor-pointer w-full"/>
+				</form>
+			</section>
+		</div>
 
-		<section class="space-y-2">
-			<h3>CREATE A TODO</h3>
+		
 
-			<form id="new-todo-form" @submit.prevent="addTodo" class="space-y-4">
-				<input type="text" name="content" id="content" placeholder="Enter Todo" class="w-full px-2" v-model="input_content" />
-				<input type="submit" value="Add todo" class=" border rounded-lg cursor-pointer w-full"/>
-			</form>
-		</section>
-
-		<section class="py-5 todo-list">
+		<div class="w-full mt-6 h-[1px] bg-black"></div>
+		<section class="mt-2">
 			<h3>TODO LIST</h3>
-			<div class="list h-96 overflow-y-scroll" id="todo-list">
+			<div class=" list max-h-[65vh] overflow-y-scroll pr-2 gap-3 space-y-2 " id="todo-list">
 
-				<div v-for="todo in todos_asc" :class="`todo-item ${todo.done && 'done'}`">
+				<div v-for="todo in todos_asc" class="px-3 py-1.5 flex gap-4 items-center bg-very_light " :class="`todo-item ${todo.done && 'done'}`">
 					<label>
-						<input type="checkbox" v-model="todo.done" />
+						<input type="checkbox" class=" rounded-full ml-1" v-model="todo.done" />
 					</label>
 
-					<div class="todo-content">
-						<input type="text" v-model="todo.content" />
+					<div class="todo-content whitespace-normal flex-wrap">
+						<input type="text" class="bg-very_light whitespace-normal w-full items-center" v-model="todo.content" />
 					</div>
 
-					<div class="actions">
-						<button class="delete" @click="removeTodo(todo)">Delete</button>
+					<div class="flex items-center">
+						<button class="delete" @click="removeTodo(todo)"><Icon name="material-symbols:delete-rounded" class="text-red-700"/></button>
+						
 					</div>
 				</div>
 

@@ -54,6 +54,13 @@ export default defineNuxtConfig({
             Lighter_Gray: "#E5E5E5", //(for a clean and modern background)
             Charcoal_Gray: "#333333", //(for subtle contrasts and elegance)
             Electric_Blue: "#4F8DE8", //(to provide a pop of energy and attention)
+
+            //coolors.com 
+            Whitish:"#F4EFFA",
+            Dark:"#2F184B",
+            Purpleish:"#532B88",
+            lightish:"#9B72CF",
+            very_light:"#C8B1E4",
           },
         },
       },

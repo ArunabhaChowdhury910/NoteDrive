@@ -1,6 +1,6 @@
 <template>
-  <div class="w-screen h-screen ">
-      <div class="w-full h-screen p-2" ref="inputContainer" @input="handleInput" contenteditable="true">
+  <div class="w-screen h-full focus ">
+      <div class="w-full h-screen :border-none text-lg text-Space px-8 py-6" ref="inputContainer" @input="handleInput" contenteditable="true">
       </div>
   </div>
 </template>
@@ -21,9 +21,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.input-container {
-  border: 1px solid #ccc;
-  padding: 10px;
-  max-width: 400px;
-}
+
 </style>

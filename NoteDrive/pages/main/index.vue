@@ -1,18 +1,18 @@
 <template>
     <!-- THIS IS THE WHOLE BODY -->
-    <div class="w-screen h-full bg-Light_Gray">
+    <div class="w-full h-full bg-Whitish">
   
       <!-- HEADING -->
-      <div class="w-full h-fit bg-Purple">
-        <div class="w-full px-3  font-Berkshire flex items-center justify-between text-2xl">
-          <h1 @click="updateData('M')" class="cursor-pointer m-2 text-white">NOTEDRIVE</h1>
+      <div class="w-full h-fit bg-Dark">
+        <div class="w-full px-3  font-Space flex items-center justify-between text-2xl">
+          <NuxtLink to="/" class="cursor-pointer m-2 font-Inter text-Whitish">NOTEDRIVE</NuxtLink>
           
-          <div class="flex space-x-5 text-white">
+          <div class="flex space-x-2 text-Whitish">
             <p class="">Hello</p>
             <p>User_001</p>
           </div>
         </div> 
-        <div class="flex p-1.5 bg-Light_Purple text-Charcoal_Gray">
+        <!-- <div class="flex p-1.5 bg-Light_Purple text-Charcoal_Gray">
           <ul class="items-center ml-3 justify-between gap-36 flex">
             <li @click="updateData('A')" class="cursor-pointer">File</li>
             <li @click="updateData('B')" class="cursor-pointer">Home</li>
@@ -22,11 +22,11 @@
             <li @click="updateData('F')" class="cursor-pointer">Weather</li>
             <li @click="updateData('G')" class="cursor-pointer">ChatGpt</li>
           </ul>
-        </div>
+        </div> -->
       </div>
   
       <!-- RIM UPPER -->
-      <div class="flex justify-start items-center bg-halka_pink ">
+      <!-- <div class="flex justify-start items-center bg-halka_pink ">
         <ul v-if="data === 'A'" class="items-center justify-items-stretch  gap-24 w-fit flex px-5">
           <li class="cursor-pointer">Workspace</li>
           <li class="cursor-pointer">New</li>
@@ -63,16 +63,16 @@
           <li class="cursor-pointer">Recent</li>
           <li class="cursor-pointer">Export As</li>
         </ul>
-      </div>
+      </div> -->
       
       <!-- MIDDLE -->
       <div class="flex py-3 mx-2 space-x-1.5 ">         
         <!-- MIDDLE PANEL -->
 
-        <div class="flex justify-center rounded-lg border w-9/12 h-screen bg-Lavender">
+        <div class="flex justify-center rounded-lg border w-9/12 h-full bg-very_light">
           <notes/>
         </div>
-        <div class="flex justify-center rounded-lg border w-full h-screen bg-Lavender">
+        <div class="flex justify-center rounded-lg border w-full h-screen ">
           <todolist/>
         </div>
 
@@ -91,6 +91,7 @@
   
   import notes from '/components/cards/notes.vue';
   import todolist from '/components/cards/todolist.vue';
+  
   
   const data = ref("X");
   
