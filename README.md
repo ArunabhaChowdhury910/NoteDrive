@@ -1,10 +1,10 @@
 # NoteDrive
 
 HOW TO INSTALL NUX INSIDE A FOLDER
-```npx nuxi@latest init tik-tok-clone```
+```npx nuxi@latest init <file_name>```
 or 
 
-```npx nuxi init tiktok-clone```
+```npx nuxi init <file_name>```
 
 ```npm install```
 
