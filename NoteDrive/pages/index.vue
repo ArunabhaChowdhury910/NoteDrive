@@ -22,9 +22,9 @@
 
             <!-- CARD PART -->
             <div class="p-3">
-                <div class="flex space-x-24 bg-dark_sub_background mt-8">
-                    <div class="py-7 px-4 w-1/3 space-y-12 ">
-                        <h1 class="text-left  text-dark_main_color text-8xl font-Berkshire w-full">Crafting Success</h1>
+                <div class="flex space-x-24 bg-dark_sub_background mt-8 sm:max-md:space-x-12">
+                    <div class="py-7 px-4 w-1/3 space-y-12 min-[320px]:max-md:w-fit ">
+                        <h1 class="text-left  text-dark_main_color text-8xl font-Berkshire w-full ">Crafting Success</h1>
                         <p class="text-left text-lg font-Nanum">Embark on an enchanting journey with NoteDrive. Effortlessly take notes, manage dynamic to-do lists, and craft personalized diaries. Fueling your organized creativity, powered by ChatGPT, it's the magic touch you need.</p>
                     </div>
                     <div class=" w-3/4 py-6 flex space-x-16 overflow-x-scroll container-snap" >

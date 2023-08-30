@@ -46,7 +46,7 @@ onMounted(() => {
 </script>
 
 <template>
-	<main class="font-Montserrat p-6 bg-lightish rounded-lg">
+	<main class="font-Montserrat p-6 bg-lightish rounded-lg ">
 		
 		<div class="space-y-4">
 			<section class="flex justify-center w-full">
@@ -70,20 +70,21 @@ onMounted(() => {
 		<div class="w-full mt-6 h-[1px] bg-black"></div>
 		<section class="mt-2">
 			<h3>TODO LIST</h3>
-			<div class=" list max-h-[65vh] overflow-y-scroll pr-2 gap-3 space-y-2 " id="todo-list">
-
-				<div v-for="todo in todos_asc" class="px-3 py-1.5 flex gap-4 items-center bg-very_light " :class="`todo-item ${todo.done && 'done'}`">
-					<label>
-						<input type="checkbox" class=" rounded-full ml-1" v-model="todo.done" />
-					</label>
-
-					<div class="todo-content whitespace-normal flex-wrap">
-						<input type="text" class="bg-very_light whitespace-normal w-full items-center" v-model="todo.content" />
-					</div>
-
-					<div class="flex items-center">
-						<button class="delete" @click="removeTodo(todo)"><Icon name="material-symbols:delete-rounded" class="text-red-700"/></button>
-						
+			<div class=" list max-h-[65vh] overflow-y-scroll pr-2 gap-3 space-y-2  flex-grow " id="todo-list">
+				<div class="hover:resize-md space-y-3">
+					<div v-for="todo in todos_asc" class=" px-3 py-1.5 flex gap-4  items-center bg-very_light " :class="`todo-item ${todo.done && 'done'}`">
+						<label>
+							<input type="checkbox" class=" rounded-full ml-1" v-model="todo.done" />
+						</label>
+	
+						<div class="flex-grow whitespace-normal ">
+							<input type="text" class="bg-very_light whitespace-normal w-full items-center" v-model="todo.content" />
+						</div>
+	
+						<div class="flex items-center">
+							<button class="delete" @click="removeTodo(todo)"><Icon name="material-symbols:delete-rounded" class="text-red-700"/></button>
+							
+						</div>
 					</div>
 				</div>
 

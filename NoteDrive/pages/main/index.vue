@@ -66,10 +66,10 @@
       </div> -->
       
       <!-- MIDDLE -->
-      <div class="flex py-3 mx-2 space-x-1.5 ">         
+      <div class="flex py-3 mx-2 space-x-1.5 h-full  ">         
         <!-- MIDDLE PANEL -->
 
-        <div class="flex justify-center rounded-lg border w-9/12 h-full bg-very_light">
+        <div class=" flex justify-center rounded-lg border w-9/12 h-screen bg-very_light">
           <notes/>
         </div>
         <div class="flex justify-center rounded-lg border w-full h-screen ">

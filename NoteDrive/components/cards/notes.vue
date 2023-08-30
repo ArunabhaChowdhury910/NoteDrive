@@ -1,6 +1,6 @@
 <template>
-  <div class="w-screen h-full focus ">
-      <div class="w-full h-screen :border-none text-lg text-Space px-8 py-6" ref="inputContainer" @input="handleInput" contenteditable="true">
+  <div class="w-screen h-full focus overflow-y-scroll ">
+      <div class="w-full h-full :border-none text-lg text-Space px-8 py-6" ref="inputContainer" @input="handleInput" contenteditable="true">
       </div>
   </div>
 </template>
