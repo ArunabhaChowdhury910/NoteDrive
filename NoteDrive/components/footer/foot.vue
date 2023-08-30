@@ -1,7 +1,7 @@
 <template>
     <footer class="bg-main_heading_background text-white py-8">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="flex flex-wrap items-center justify-between">
+      <div class="w-full flex justify-center px-4">
+        <div class="flex flex-wrap w-full justify-evenly items-center ">
           <div class="flex items-center space-x-4">
             <!-- <img src="your-logo.png" alt="Logo" class="h-8"> -->
             <p class="text-sm">© 2023 NoteDrive. All rights reserved.</p>

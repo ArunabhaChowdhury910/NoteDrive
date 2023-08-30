@@ -43,6 +43,9 @@ onMounted(() => {
 	name.value = localStorage.getItem('name') || ''
 	todos.value = JSON.parse(localStorage.getItem('todos')) || []
 })
+
+let data= false;
+
 </script>
 
 <template>
@@ -74,11 +77,13 @@ onMounted(() => {
 				<div class="hover:resize-md space-y-3">
 					<div v-for="todo in todos_asc" class=" px-3 py-1.5 flex gap-4  items-center bg-very_light " :class="`todo-item ${todo.done && 'done'}`">
 						<label>
-							<input type="checkbox" class=" rounded-full ml-1" v-model="todo.done" />
+							<input type="checkbox" class=" rounded-full ml-1" v-model="todo.done" @click="data===true"/>
 						</label>
 	
-						<div class="flex-grow whitespace-normal ">
-							<input type="text" class="bg-very_light whitespace-normal w-full items-center" v-model="todo.content" />
+						<div class=" ">
+							<!-- <input type="text" class="bg-very_light whitespace-normal w-full items-center" v-model="todo.content" /> -->
+							<textarea v-if="data==true" type="text" class="line-through flex-wrap overflow-hidden mr-8 h-5 hover:resize max-h-full bg-very_light w-full items-center" v-model="todo.content" />
+							<textarea v-else type="text" class="line-through flex-wrap overflow-hidden mr-8 h-5 hover:resize max-h-full bg-very_light w-full items-center" v-model="todo.content" />
 						</div>
 	
 						<div class="flex items-center">
@@ -93,3 +98,31 @@ onMounted(() => {
 
 	</main>
 </template>
+
+
+<style>
+
+.custom-textarea {
+  resize: none; /* Disable default resizable grip */
+}
+
+.custom-textarea::after {
+ 
+  transform: rotate(45deg);
+ /* Ensure the grip doesn't interfere with textarea interaction */
+}
+
+
+ .container-snap::-webkit-scrollbar {
+  display: none;
+}
+
+
+ .container-snap {
+  -ms-overflow-style: none; /* IE and Edge*/ 
+  scrollbar-width: none; /* Firefox */
+} 
+
+
+
+</style>
