@@ -68,22 +68,19 @@ let data= false;
 			</section>
 		</div>
 
-		
-
 		<div class="w-full mt-6 h-[1px] bg-black"></div>
-		<section class="mt-2">
+		<section class=" mt-2">
 			<h3>TODO LIST</h3>
-			<div class=" list max-h-[65vh] overflow-y-scroll pr-2 gap-3 space-y-2  flex-grow " id="todo-list">
-				<div class="hover:resize-md space-y-3">
+			<div class=" max-h-[65vh] overflow-y-scroll container-snap pr-2 gap-3 space-y-2  flex-1 " id="todo-list">
+				<div class="space-y-3">
 					<div v-for="todo in todos_asc" class=" px-3 py-1.5 flex gap-4  items-center bg-very_light " :class="`todo-item ${todo.done && 'done'}`">
 						<label>
 							<input type="checkbox" class=" rounded-full ml-1" v-model="todo.done" @click="data===true"/>
 						</label>
 	
 						<div class=" ">
-							<!-- <input type="text" class="bg-very_light whitespace-normal w-full items-center" v-model="todo.content" /> -->
-							<textarea v-if="data==true" type="text" class="line-through flex-wrap overflow-hidden mr-8 h-5 hover:resize max-h-full bg-very_light w-full items-center" v-model="todo.content" />
-							<textarea v-else type="text" class="line-through flex-wrap overflow-hidden mr-8 h-5 hover:resize max-h-full bg-very_light w-full items-center" v-model="todo.content" />
+							
+							<textarea class="hover:h-max" :class="` flex-wrap overflow-hidden mr-8 h-5 hover:resize max-h-full bg-very_light w-full items-center ${todo.done && 'line-through'}`" v-model="todo.content" />
 						</div>
 	
 						<div class="flex items-center">
@@ -123,6 +120,8 @@ let data= false;
   scrollbar-width: none; /* Firefox */
 } 
 
-
+.line-through {
+  text-decoration: line-through;
+}
 
 </style>
