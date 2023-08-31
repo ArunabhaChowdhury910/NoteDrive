@@ -1,21 +1,21 @@
 <template>
     <!-- THIS IS THE WHOLE BODY -->
-    <div class="w-full h-full bg-Whitish">
+    <div class="w-full h-screen bg-Whitish">
   
       <!-- HEADING -->
-      <div class="w-full h-fit bg-Dark">
+      <div class="w-full h-[5.5vh] bg-Dark">
         <up_nav/> 
         
       </div>
   
       <!-- MIDDLE -->
-      <div class="flex py-3 mx-2 space-x-1.5 h-full flex-grow  ">         
+      <div class="flex py-3 mx-2 space-x-1.5 h-fit flex-grow  ">         
         <!-- MIDDLE PANEL -->
 
-        <div class=" flex rounded-lg border w-9/12 bg-very_light">
+        <div class=" flex rounded-lg border w-9/12 bg-very_light h-[91.5vh]">
           <notes class="h-full"/>
         </div>
-        <div class=" rounded-lg border w-full  ">
+        <div class=" rounded-lg border w-full h-[91.5vh] ">
           <todolist class="h-full"/>
         </div>
 

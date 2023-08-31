@@ -2,21 +2,35 @@
   <div class="w-screen  overflow-y-scroll p-5 container-snap">
       <!-- <div class="w-full h-full :border-none text-lg text-Space px-8 py-6" ref="inputContainer" @input="handleInput" contenteditable="true">
       </div> -->
-      <textarea type="text" class="bg-transparent w-full h-full p-5 focus:border-none "></textarea>
+      <textarea type="text" class="bg-transparent w-full h-full p-5 focus:border-none " ref="textarea"
+      @input="handleInput"></textarea>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-
+import { defineComponent, Ref, ref, onMounted } from 'vue';
 export default defineComponent({
-  methods: {
-    handleInput(event: InputEvent) {
-      const enteredText = (event.target as HTMLElement).textContent || '';
-      console.log('Entered text:', enteredText);
+  setup() {
+    const textarea: Ref<HTMLTextAreaElement | null> = ref(null);
 
-      
-    },
+    const handleInput = () => {
+      if (textarea.value) {
+        textarea.value.style.height = 'auto';
+        textarea.value.style.height = textarea.value.scrollHeight + 'px';
+      }
+    };
+
+    /*onMounted(() => {
+      if (textarea.value) {
+        textarea.value.style.height = window.innerHeight-120  + 'px';
+        textarea.value.addEventListener('input', handleInput);
+      }
+    });*/
+
+    return {
+      textarea,
+      handleInput,
+    };
   },
 });
 </script>

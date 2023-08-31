@@ -2,18 +2,18 @@
 import { ref, onMounted, computed, watch } from 'vue'
 
 const todos = ref([])
-const name = ref('')
+//const name = ref('')
 
 const input_content = ref('')
-const input_category = ref(null)
+//const input_category = ref(null)
 
 const todos_asc = computed(() => todos.value.sort((a,b) =>{
 	return a.createdAt - b.createdAt
 }))
 
-watch(name, (newVal) => {
+/*watch(name, (newVal) => {
 	localStorage.setItem('name', newVal)
-})
+})*/
 
 watch(todos, (newVal) => {
 	localStorage.setItem('todos', JSON.stringify(newVal))
@@ -28,10 +28,10 @@ const addTodo = () => {
 
 	todos.value.push({
 		content: input_content.value,
-		category: input_category.value,
-		done: false,
-		editable: false,
-		createdAt: new Date().getTime()
+		//category: input_category.value,
+		//done: false,
+		//editable: false,
+		//createdAt: new Date().getTime()
 	})
 }
 
@@ -40,7 +40,7 @@ const removeTodo = (todo) => {
 }
 
 onMounted(() => {
-	name.value = localStorage.getItem('name') || ''
+	//name.value = localStorage.getItem('name') || ''
 	todos.value = JSON.parse(localStorage.getItem('todos')) || []
 })
 
@@ -71,7 +71,7 @@ let data= false;
 		<div class="w-full mt-6 h-[1px] bg-black"></div>
 		<section class=" mt-2">
 			<h3>TODO LIST</h3>
-			<div class=" max-h-[65vh] overflow-y-scroll container-snap pr-2 gap-3 space-y-2  flex-1 " id="todo-list">
+			<div class=" max-h-[50vh] mt-3 overflow-y-scroll container-snap pr-2 gap-3 space-y-2  flex-1 " id="todo-list">
 				<div class="space-y-3">
 					<div v-for="todo in todos_asc" class=" px-3 py-1.5 flex gap-4  items-center bg-very_light " :class="`todo-item ${todo.done && 'done'}`">
 						<label>
