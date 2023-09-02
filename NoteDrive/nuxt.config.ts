@@ -61,6 +61,13 @@ export default defineNuxtConfig({
             Purpleish:"#532B88",
             lightish:"#9B72CF",
             very_light:"#C8B1E4",
+
+            //notesn and other pages
+            Orange:"#FB8500",
+            Yellow:"#FFB703",
+            P_Blue:"#023047",
+            G_Blue:"#219EBC",
+            S_Blue:"#8ECAE6",
           },
         },
       },
