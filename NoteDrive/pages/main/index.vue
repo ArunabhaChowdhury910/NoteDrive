@@ -1,9 +1,9 @@
 <template>
     <!-- THIS IS THE WHOLE BODY -->
-    <div class="w-full h-screen bg-Whitish">
+    <div class="max-[367px]:w-fit w-full h-screen bg-S_Blue">
   
       <!-- HEADING -->
-      <div class="w-full h-[5.5vh] bg-Dark">
+      <div class=" w-full h-fit">
         <up_nav/> 
         
       </div>
@@ -12,12 +12,12 @@
       <div class="flex py-3 mx-2 space-x-1.5 h-fit flex-grow  ">         
         <!-- MIDDLE PANEL -->
 
-        <div class=" flex rounded-lg border w-9/12 bg-very_light h-[91.5vh]">
+        <!-- <div class=" flex rounded-lg border w-9/12 bg-very_light h-[91.5vh]">
           <notes class="h-full"/>
         </div>
         <div class=" rounded-lg border w-full h-[91.5vh] ">
           <todolist class="h-full"/>
-        </div>
+        </div> -->
 
       </div>
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full px-3 bg-Dark  font-Space flex items-center justify-between text-2xl">
+    <div class="w-full px-3 bg-P_Blue  font-Space flex items-center justify-between text-2xl">
           <NuxtLink to="/main/page_selector" class="cursor-pointer m-2 font-Inter text-Whitish">NOTEDRIVE</NuxtLink>
           
           <div class="flex space-x-2 text-Whitish">
