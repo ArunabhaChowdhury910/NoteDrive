@@ -1,50 +1,84 @@
 <template>
-  <div class="w-screen  overflow-y-scroll p-5 container-snap">
-      <!-- <div class="w-full h-full :border-none text-lg text-Space px-8 py-6" ref="inputContainer" @input="handleInput" contenteditable="true">
-      </div> -->
-      <textarea type="text" class="bg-transparent w-full h-full p-5 focus:border-none " ref="textarea"
-      @input="handleInput"></textarea>
-  </div>
+  <canvas class="border w-full" ref="canvasRef"></canvas>
 </template>
 
-<script lang="ts">
-import { defineComponent, Ref, ref, onMounted } from 'vue';
-export default defineComponent({
-  setup() {
-    const textarea: Ref<HTMLTextAreaElement | null> = ref(null);
+<script>
+// Brush colour and size
+const colour = "#fffff";
+const strokeWidth = 18;
 
-    const handleInput = () => {
-      if (textarea.value) {
-        textarea.value.style.height = 'auto';
-        textarea.value.style.height = textarea.value.scrollHeight + 'px';
-      }
-    };
-
-    /*onMounted(() => {
-      if (textarea.value) {
-        textarea.value.style.height = window.innerHeight-120  + 'px';
-        textarea.value.addEventListener('input', handleInput);
-      }
-    });*/
-
+export default {
+  data() {
     return {
-      textarea,
-      handleInput,
+      latestPoint: null,
+      drawing: false,
+      canvas: null,
+      context: null,
     };
   },
-});
+  mounted() {
+    // Set up our drawing context
+    this.canvas = this.$refs.canvasRef;
+    this.context = this.canvas.getContext("2d");
+
+    // Register event handlers
+    this.canvas.addEventListener("mousedown", this.mouseDown, false);
+    this.canvas.addEventListener("mouseup", this.endStroke, false);
+    this.canvas.addEventListener("mouseout", this.endStroke, false);
+    this.canvas.addEventListener("mouseenter", this.mouseEnter, false);
+  },
+  methods: {
+    continueStroke(newPoint) {
+      this.context.beginPath();
+      this.context.moveTo(this.latestPoint[0], this.latestPoint[1]);
+      this.context.strokeStyle = colour;
+      this.context.lineWidth = strokeWidth;
+      this.context.lineCap = "round";
+      this.context.lineJoin = "round";
+      this.context.lineTo(newPoint[0], newPoint[1]);
+      this.context.stroke();
+
+      this.latestPoint = newPoint;
+    },
+    startStroke(point) {
+      this.drawing = true;
+      this.latestPoint = point;
+    },
+    mouseMove(evt) {
+      if (!this.drawing) {
+        return;
+      }
+      this.continueStroke([evt.offsetX, evt.offsetY]);
+    },
+    mouseDown(evt) {
+      if (this.drawing) {
+        return;
+      }
+      evt.preventDefault();
+      this.canvas.addEventListener("mousemove", this.mouseMove, false);
+      this.startStroke([evt.offsetX, evt.offsetY]);
+    },
+    mouseEnter(evt) {
+      if (!this.mouseButtonIsDown(evt.buttons) || this.drawing) {
+        return;
+      }
+      this.mouseDown(evt);
+    },
+    endStroke(evt) {
+      if (!this.drawing) {
+        return;
+      }
+      this.drawing = false;
+      evt.currentTarget.removeEventListener("mousemove", this.mouseMove, false);
+    },
+    mouseButtonIsDown(buttons) {
+      const BUTTON = 0b01;
+      return (BUTTON & buttons) === BUTTON;
+    },
+  },
+};
 </script>
 
 <style scoped>
-
-.container-snap::-webkit-scrollbar {
-  display: none;
-}
-
- .container-snap {
-  -ms-overflow-style: none; /* IE and Edge*/ 
-  scrollbar-width: none; /* Firefox */
-} 
-
-
+/* Add any scoped styles here if needed */
 </style>
