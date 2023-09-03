@@ -1,12 +1,12 @@
 <template>
     <!-- THIS IS THE MAIN BODY -->
-    <div class="h-full w-screen">
+    <div class="h-full ">
 
         <!-- THSI IS THE NAVBAR -->
         <uppernav/>
 
         <!-- THIS IS THE BODY PART -->
-        <div class="w-screen h-fit">
+        <div class="w-full h-fit">
 
             <!-- HEADING -->
 

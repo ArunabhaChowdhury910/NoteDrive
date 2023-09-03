@@ -1,31 +1,20 @@
 <template>
-  <!-- NAVBAE -->
-  <div class="w-full h-fit max-[367px]:w-fit">
-    <up_nav/>
-  </div> 
-  <!-- MIDDLE CANVAS -->
-  <div class="border w-full p-3 bg-S_Blue ">
-    <notes/>
-  </div>   
+  <div class="  h-screen ">
+      <up_nav class="fixed z-40"/>
+      <div class="flex h-full">
+        <side_nave class="pt-12 fixed w-1/6"/>
+        <right_show class="ml-60 pl-10 pt-20 "/>
+        
+      </div>
+  </div>
 </template>
-  
-  <script setup lang="ts">
-  import { ref } from 'vue';
-  
-  import notes from '/components/cards/notes.vue';
-  import todolist from '/components/cards/todolist.vue';
-  import up_nav from '/components/navbar/up_nav.vue';
-  
-  // const data = ref("X");
-  
-  // const updateData = (newData: string) => {
-  //   data.value = newData;
-  // };
 
-  
+<script setup lang="ts">
+import side_nave from '/components/navbar/side_nave.vue';
+import up_nav from '/components/navbar/up_nav.vue';
+import right_show from '/components/right_show.vue';
+</script>
 
-  </script>
-  
-  <style scoped>
-  </style>
-  
+<style scoped>
+
+</style>W
