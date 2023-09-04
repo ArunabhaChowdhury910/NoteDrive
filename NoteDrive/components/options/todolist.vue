@@ -49,31 +49,28 @@ let data= false;
 </script>
 
 <template>
-	<main class="font-Montserrat p-6 bg-lightish rounded-lg ">
+	<main class="font-Montserrat p-6  rounded-lg ">
 		
-		<div class="space-y-4">
-			<section class="flex justify-center w-full">
-				<h2 class="title font-Montserrat text-lg">
-					What's up, User_001
-				</h2>
-			</section>
-	
-			<section class="space-y-2 ">
-				<h3>CREATE A TODO</h3>
-	
-				<form id="new-todo-form" @submit.prevent="addTodo" class="space-y-4">
-					<input type="text" name="content" id="content" placeholder="Enter Todo" class="text-Dark w-full px-2 rounded bg-very_light" v-model="input_content" />
-					<input type="submit" value="Add todo" class="bg-Dark text-Whitish rounded-lg cursor-pointer w-full"/>
-				</form>
-			</section>
-		</div>
+		<div class="">
+			<section class=" ">
+				<h1 class="font-bold text-3xl">TODO-LIST</h1>
+				<p class="w-1/3 text-sm mb-3 mt-2">"Streamline your tasks effortlessly with our user-friendly Todos feature. Easily add, edit, and complete tasks, making organization a breeze. Simplify your life and boost productivity today!"</p>
+				<div class="w-full mt-10 h-[1px] bg-black"></div>
+				<div class="flex gap-3">
+					<div class="w-1/3">
+						<h2 class="mt-3 text-center font-semibold w-1/3">Todo</h2>
+						<form id="new-todo-form" @submit.prevent="addTodo" class="mt-3 space-x-3 flex-col">
+							<input type="submit" value="+" class="bg-Dark text-Whitish rounded-lg cursor-pointer w-fit px-2"/>
+							<input type="text" name="content" id="content" placeholder="Enter Todo" class="px-3 py-1.5 text-Dark w-1/2 rounded bg-very_light" v-model="input_content" />
+						</form>
+					</div>
+					<div class="w-1/3">
+						<h2 class="mt-3 text-center font-semibold w-1/3">Reminder</h2>
+					</div>
 
-		<div class="w-full mt-6 h-[1px] bg-black"></div>
-		<section class=" mt-2">
-			<h3>TODO LIST</h3>
-			<div class=" max-h-[50vh] mt-3 overflow-y-scroll container-snap pr-2 gap-3 space-y-2  flex-1 " id="todo-list">
-				<div class="space-y-3">
-					<div v-for="todo in todos_asc" class=" px-3 py-1.5 flex gap-4  items-center bg-very_light " :class="`todo-item ${todo.done && 'done'}`">
+					<div class="w-1/3">
+						<h2 class="mt-3 text-center font-semibold w-1/3">Done</h2>
+						<div v-for="todo in todos_asc" class="mt-2 px-3 py-1.5 flex gap-4 w-fit rounded-lg items-center bg-very_light " :class="`todo-item ${todo.done && 'done'}`">
 						<label>
 							<input type="checkbox" class=" rounded-full ml-1" v-model="todo.done" @click="data===true"/>
 						</label>
@@ -88,6 +85,17 @@ let data= false;
 							
 						</div>
 					</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		
+		<section class=" mt-2">
+			
+			<div class=" max-h-[50vh] mt-3 overflow-y-scroll container-snap pr-2 gap-3 space-y-2  flex-1 " id="todo-list">
+				<div class="space-y-3">
+					
 				</div>
 
 			</div>

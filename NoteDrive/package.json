@@ -15,5 +15,8 @@
     "@types/node": "^18.17.3",
     "nuxt": "^3.6.5",
     "nuxt-icon": "^0.5.0"
+  },
+  "dependencies": {
+    "vuex": "^4.1.0"
   }
 }
