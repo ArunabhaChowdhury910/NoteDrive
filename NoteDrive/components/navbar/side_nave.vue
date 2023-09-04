@@ -1,5 +1,5 @@
 <template>
-    <div class=" p-1 h-full space-y-8 bg-slate-200">
+    <div class=" p-1 h-full w-fit pr-24 md:pr-24 max-[200px]:w-1/11 space-y-8 bg-slate-200 ">
         <div class="h-[1px]"></div>
         <ul class="flex-col space-y-2 p-3 text-Orange">
             <li class="font-semibold flex items-center cursor-pointer"><Icon name="ic:sharp-home" class=" text-P_Blue mr-1 flex text-2xl items-center"></Icon>ACCOUNT</li>
