@@ -1,5 +1,5 @@
 <template>
-    <div class="p-1 bg-main_heading_background">
+    <div class="p-1 w-full">
         <div class="flex">
             <NuxtLink to="/" class="text-3xl max-md:h-3 text-white font-Inter font-normal p-5">NOTEDRIVE</NuxtLink>  
             <div class="md:hidden flex justify-end w-full px-5">
@@ -7,9 +7,9 @@
             </div>
             <div class="flex justify-end items-center w-full gap-12 max-md:hidden">
                 
-                <NuxtLink to="/" class="text-xl text-white font-Inter font-normal p-5 hover:text-dark_main_color">About Us</NuxtLink>
-                <NuxtLink to="/" class="text-xl text-white font-Inter font-normal p-5 hover:text-dark_main_color">Join Us</NuxtLink>
-                <NuxtLink to="/Auth" class="text-xl text-white font-Inter font-normal p-5 hover:text-dark_main_color mr-3">Login</NuxtLink>
+                <NuxtLink to="/" class="text-xl text-white font-Inter font-normal p-5 hover:text-Orange">About Us</NuxtLink>
+                <NuxtLink to="/" class="text-xl text-white font-Inter font-normal p-5 hover:text-Orange">Join Us</NuxtLink>
+                <NuxtLink to="/Auth" class="text-xl text-white font-Inter font-normal p-5 hover:text-Orange mr-3">Login</NuxtLink>
             </div>
         </div>
         <div class="md:hidden w-full left-1.5">

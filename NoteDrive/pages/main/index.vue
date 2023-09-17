@@ -17,4 +17,4 @@ import right_show from '/components/right_show.vue';
 
 <style scoped>
 
-</style>W
+</style>
