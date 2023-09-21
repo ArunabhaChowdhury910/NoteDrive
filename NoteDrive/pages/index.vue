@@ -71,31 +71,8 @@ import foot from '/components/footer/foot.vue'
 
 import { reactive } from 'vue'
 
-import { supabase } from "/src/lib/supabaseClient";
 
- const { data: { user } } = await supabase.auth.getUser()
- console.log(user)
- // console.log(user.user_metadata[1])
  
- // const router = useRouter()
- watchEffect(async () => {
-  if (user) {
-     try {
-       const { data: profiles, error } = await supabase
-         .from('profiles')
-         .update({ username: user.user_metadata.name_stringed }) // Access user from ref
-         .eq('id', user.id); // Access user from re
-       if (error) {
-         // Handle the error here
-         console.error('Error updating profile:', error);
-       } 
-     } catch (error) {
-       // Handle unexpected errors here
-       console.error('Unexpected error:', error);
-     }
-   }
- });
-// Import the package
 const featureCards: {
     heading: string,
     body: string,

@@ -8,7 +8,7 @@
             <div class="flex justify-end items-center w-full gap-12 max-md:hidden">
                 
                 <NuxtLink to="/" class="text-xl text-white font-Inter font-normal p-5 hover:text-Orange">About Us</NuxtLink>
-                <NuxtLink to="/" class="text-xl text-white font-Inter font-normal p-5 hover:text-Orange">Join Us</NuxtLink>
+                <NuxtLink to="/AboutUs" class="text-xl text-white font-Inter font-normal p-5 hover:text-Orange">Join Us</NuxtLink>
                 <NuxtLink to="/Auth" class="text-xl text-white font-Inter font-normal p-5 hover:text-Orange mr-3">Login</NuxtLink>
             </div>
         </div>

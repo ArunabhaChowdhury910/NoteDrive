@@ -7,7 +7,7 @@
             </div>
             <div class="flex justify-end items-center w-full gap-12 max-md:hidden">
                 
-                <NuxtLink to="/" class="text-xl text-white font-Inter font-normal p-5 hover:text-dark_main_color">About Us</NuxtLink>
+                <NuxtLink to="/AboutUs" class="text-xl text-white font-Inter font-normal p-5 hover:text-dark_main_color">About Us</NuxtLink>
                 <NuxtLink to="/" class="text-xl text-white font-Inter font-normal p-5 hover:text-dark_main_color">Join Us</NuxtLink>
                 <NuxtLink to="/Auth" class="text-xl text-white font-Inter font-normal p-5 hover:text-dark_main_color mr-3">Login</NuxtLink>
             </div>
@@ -19,7 +19,7 @@
 
             <div v-if="isMenuOpen" class=" w-full flex-col justify-start items-start bg-main_heading_background mt-2 p-2">
                 <div class="flex-col justify-start w-full">
-                    <NuxtLink to="/" class="block text-xl text-white font-Inter font-normal p-2 hover:text-dark_main_color">
+                    <NuxtLink to="/AboutUs" class="block text-xl text-white font-Inter font-normal p-2 hover:text-dark_main_color">
                     About Us</NuxtLink>
                     <NuxtLink to="/" class="block text-xl  text-white font-Inter font-normal p-2 hover:text-dark_main_color">
                     Join Us</NuxtLink>

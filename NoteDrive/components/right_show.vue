@@ -1,6 +1,6 @@
 <template>
-   <notes_view />
-    <!-- <todolist/> -->
+   <!-- <notes_view /> -->
+    <todolist/>
 </template>
 
 <script setup>

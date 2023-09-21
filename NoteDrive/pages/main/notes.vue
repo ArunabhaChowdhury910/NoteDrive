@@ -8,25 +8,90 @@
       
     </div>
 
+
     <!-- MIDDLE -->
-    <div class=" p-3 bg-S_Blue pt-16 space-x-1.5 h-full">         
+    <div class=" p-3 bg-S_Blue pt-16 space-x-1.5 h-full">       
+      
+  
       <!-- MIDDLE PANEL -->
-      <textarea name="" id="" class=" bg-P_Blue p-3 text-slate-200 w-full h-full"></textarea>
+      <!-- <textarea v-model="fileContent" type="file" class=" bg-P_Blue p-3 text-slate-200 w-full h-full" placeholder="click inside the blue box to save" ></textarea>
+      <button @click="createFile">Save</button> -->
+      <!-- <form class="row flex-center mt-6" @submit.prevent="handleLogin">
+        <div class="w-full h-full">
+            <input type="text" v-model="text" class="bg-P_Blue p-3 text-slate-200 w-full h-full">
+        </div> 
+      </form> -->
+
+      <form @submit.prevent="handleLogin" class="w-full h-full" >
+         <textarea @click="saveToFile" placeholer="click to save " v-model="fileContent" class="bg-P_Blue p-3 text-slate-200 w-full h-full" placeholder="click inside the blue box to save"></textarea>
+         <div class="flex justify-center items-center" >
+              <input
+                type="submit"
+                class="mt-6 border px-12 rounded-lg bg-P_Blue text-white hover:bg-S_Blue hover:text-P_Blue cursor-pointer"
+                :value="loading ? 'Loading' : 'Update'"
+                :disabled="loading"
+              />
+          </div>
+         
+      </form>
     </div>
 
   </div>  
 </template>
 
-<script setup lang="ts">
-//import { ref } from 'vue';
+<script setup >
+
 import up_nav from '/components/navbar/up_nav.vue';
+import { ref } from 'vue';
+import { supabase } from "/src/lib/supabaseClient";
+const fileContent = ref('');
 
-// const data = ref("X");
+const saveToFile = () => {
+  localStorage.setItem('savedFileContent', fileContent.value);
+  //alert('Data saved to local storage.');
+};
 
-// const updateData = (newData: string) => {
-//   data.value = newData;
-// };
-</script>
+
+
+const savedFileContent = localStorage.getItem('savedFileContent');
+ onMounted(() => {
+  //  if (savedFileContent) {
+  //    fileContent.value = savedFileContent;
+  //}
+ });
+
+
+
+const { data: { user } } = await supabase.auth.getUser()
+
+
+const loading = ref(false)
+
+const handleLogin = async () => {
+  try {
+    loading.value = true
+
+    const { data, error } = await supabase
+      .from('profiles')
+      .update({ notes1: savedFileContent })
+      .eq('id', user.id)
+      .select()
+
+
+    if (error) throw error
+    alert('Signed In')
+  } catch (error) {
+    if (error instanceof Error) {
+      alert(error.message)
+    }
+  } finally {
+    loading.value = false;
+   }
+}
+
+</script> 
+
+
 
 <style scoped>
 </style>

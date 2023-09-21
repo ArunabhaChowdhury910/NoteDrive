@@ -46,6 +46,53 @@ onMounted(() => {
 
 let data= false;
 
+const loadScript = (src) => {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = src;
+    script.async = true;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+};
+
+onMounted(async () => {
+	todos.value = JSON.parse(localStorage.getItem('todos')) || []
+	
+  // Load external SMTP.js script
+  try {
+    await loadScript('https://smtpjs.com/v3/smtp.js');
+    console.log('SMTP.js script loaded successfully');
+  } catch (error) {
+    console.error('Error loading SMTP.js script:', error);
+  }
+});
+  
+
+
+const sendEmail = async () => {
+  try {
+    const emailResponse = await Email.send({
+      Host: "smtp.elasticemail.com",
+      Username: "mailtoarunabha1234.e@gmail.com",
+      Password: "ps1628drp",
+      To: 'arunabha.com@outlook.com',
+      From: "mailtoarunabha1234.e@gmail.com",
+      Subject: "This is the subject",
+      Body: "And this is the body"
+    });
+
+    alert(emailResponse); // Display the email response in an alert
+
+    // You can also handle the response further as needed
+    console.log('Email sent:', emailResponse);
+  } catch (error) {
+    // Handle errors
+    console.error('Error sending email:', error);
+  }
+};
+
 </script>
 
 <template>
@@ -65,10 +112,6 @@ let data= false;
 						</form>
 					</div>
 					<div class="w-1/3">
-						<h2 class="mt-3 text-center font-semibold w-1/3">Reminder</h2>
-					</div>
-
-					<div class="w-1/3">
 						<h2 class="mt-3 text-center font-semibold w-1/3">Done</h2>
 						<div v-for="todo in todos_asc" class="mt-2 px-3 py-1.5 flex gap-4 w-fit rounded-lg items-center bg-very_light " :class="`todo-item ${todo.done && 'done'}`">
 						<label>
@@ -78,6 +121,7 @@ let data= false;
 						<div class=" ">
 							
 							<textarea class="hover:h-max" :class="` flex-wrap overflow-hidden mr-8 h-5 hover:resize max-h-full bg-very_light w-full items-center ${todo.done && 'line-through'}`" v-model="todo.content" />
+							<input type="button" value="sendMail" class="cursor-pointer" @click="sendEmail"/>
 						</div>
 	
 						<div class="flex items-center">
@@ -86,6 +130,11 @@ let data= false;
 						</div>
 					</div>
 					</div>
+					<div class="w-1/3 ">
+						<h2 class="mt-3 mb-3 text-center font-semibold w-1/3">Reminder</h2>
+						<button @click="sendEmail" class="mt-2 px-10 py-1.5 flex gap-4 w-fit rounded-lg items-center bg-very_light cursor-pointer hover:bg-Dark hover:text-very_light">SEND MAIL</button>
+					</div>
+
 				</div>
 			</section>
 		</div>

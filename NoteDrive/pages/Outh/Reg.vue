@@ -26,9 +26,9 @@
                 class="mt-6 border px-12 rounded-lg bg-P_Blue text-white hover:bg-S_Blue hover:text-P_Blue cursor-pointer"
                 :value="loading ? 'Loading' : 'Send magic link'"
                 :disabled="loading"
-                
               />
-            </div>
+          </div>
+          <nuxt-link to="Login"><a class="text-xs hover:text-Orange text-P_Blue hover:underline">Now Login</a></nuxt-link>
         </form>
     </div>
 </div>
@@ -51,9 +51,6 @@ const name = ref('')
 
 
 let name_stringed = '';
-
-
-
 let email_stringed = '';
 let password_stringed = '';
 
@@ -94,15 +91,15 @@ const handleLogin = async () => {
     }
   } finally {
     
-    let { data, error } = await supabase.auth.signInWithPassword({
-      email: email_stringed,
-      password: password_stringed,
-      //experimental portion
-      options:{
-        data: name_stringed
+    // let { data, error } = await supabase.auth.signInWithPassword({
+    //   email: email_stringed,
+    //   password: password_stringed,
+    //   //experimental portion
+    //   options:{
+    //     data: name_stringed
       
-       }
-    })
+    //    }
+    // })
 
     loading.value = false;
    // window.location.href = "/main/RegC";
