@@ -65,7 +65,7 @@ const handleLogin = async () => {
       email: email_stringed,
     })
     if (error) throw error
-    alert('Signed In')
+    alert('Check Mail')
   } catch (error) {
     if (error instanceof Error) {
       alert(error.message)

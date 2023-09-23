@@ -13,10 +13,7 @@
             </div>
         </div>
         <div class="md:hidden w-full left-1.5">
-            <!-- <div class="flex justify-end w-full px-5">
-                <Icon name="prime:bars" class="  cursor-pointer my-3 items-end text-5xl" @click="toggleMenu"/>
-            </div> -->
-
+            
             <div v-if="isMenuOpen" class=" w-full flex-col justify-start items-start bg-main_heading_background mt-2 p-2">
                 <div class="flex-col justify-start w-full">
                     <NuxtLink to="/" class="block text-xl text-white font-Inter font-normal p-2 hover:text-dark_main_color">

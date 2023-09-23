@@ -11,8 +11,8 @@
         
         <ul class="flex-col space-y-4 p-3 text-Orange">
             <div class="bg-P_Blue w-full h-[1px]"></div>
-            <li class="cursor-pointer" ><Icon name="solar:book-2-bold-duotone" class="text-P_Blue mr-1 flex text-2xl items-center" ></Icon>NOTES</li>
-            <li class="cursor-pointer" ><Icon name="ic:twotone-notifications-active" class="text-P_Blue mr-1 flex text-2xl items-center" ></Icon>REMINDERS</li>
+            <li class="cursor-pointer" @click="setParsedatToN"><Icon name="solar:book-2-bold-duotone" class="text-P_Blue mr-1 flex text-2xl items-center" ></Icon>NOTES</li>
+            <li class="cursor-pointer" @click="setParsedatToC"><Icon name="ic:twotone-notifications-active" class="text-P_Blue mr-1 flex text-2xl items-center" ></Icon>REMINDERS</li>
             <li class="cursor-pointer"><Icon name="ri:openai-line" class="text-P_Blue mr-1 flex text-2xl items-center"></Icon>CHAT</li>
             <li class="cursor-pointer"><Icon name="fluent:weather-sunny-48-filled" class="text-P_Blue mr-1 flex text-2xl items-center" ></Icon>WEATHER</li>
             <li class="cursor-pointer"><Icon name="ic:round-access-time-filled" class="text-P_Blue mr-2 flex text-xl items-center"></Icon>TIME</li>
@@ -20,20 +20,27 @@
             
         </ul>
     </div>
-    
+ 
 </template>
 
 <script setup >
     import { ref } from 'vue';
+    import  RightShow  from '/components/right_show.vue';
+// Declare a ref variable for parsedat
+const parsedat = ref('');
 
-// const data = ref('X'); // Initialize data with an empty string
+// Function to set parsedat to 'N'
+const setParsedatToN = () => {
+  parsedat.value = 'N';
+};
 
-// const { store } = useStore(); // Access the Vuex store
+// Declare a ref variable for parsedat
+const parsedat_forC = ref('');
 
-//   const changeData = (newValue) => {
-//     store.commit('setData', newValue); // Update the data variable using Vuex
-//   };
-
+// Function to set parsedat to 'N'
+const setParsedatToC = () => {
+  parsedat_forC.value = 'C';
+};
 
 </script>
 

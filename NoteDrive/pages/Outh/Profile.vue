@@ -44,7 +44,6 @@
         </form>
     </div>
 </div>
-        apidjp
     </div>
 </template>
 
@@ -91,7 +90,7 @@ const handleLogin = async () => {
     const { data, error } = await supabase
     .from('profiles')
     .update({ 
-        name: name_stringed,
+        username: name_stringed,
         sex: sex_stringed,
         profession: profession_stringed    
     })

@@ -10,7 +10,7 @@
 
 
     <!-- MIDDLE -->
-    <div class=" p-3 bg-S_Blue pt-16 space-x-1.5 h-full">       
+    <div class=" p-3  bg-S_Blue pt-12 space-x-1.5 h-full">       
       
   
       <!-- MIDDLE PANEL -->
@@ -22,17 +22,17 @@
         </div> 
       </form> -->
 
-      <form @submit.prevent="handleLogin" class="w-full h-full" >
-         <textarea @click="saveToFile" placeholer="click to save " v-model="fileContent" class="bg-P_Blue p-3 text-slate-200 w-full h-full" placeholder="click inside the blue box to save"></textarea>
-         <div class="flex justify-center items-center" >
-              <input
-                type="submit"
-                class="mt-6 border px-12 rounded-lg bg-P_Blue text-white hover:bg-S_Blue hover:text-P_Blue cursor-pointer"
-                :value="loading ? 'Loading' : 'Update'"
-                :disabled="loading"
-              />
+      <form @submit.prevent="handleLogin" class="w-full space-y-8 h-[85%] bg-S_Blue" >
+        <div class="flex justify-start items-center" >
+           <input
+             type="submit"
+             class="mt-6 border px-12 rounded-lg bg-P_Blue text-white hover:bg-S_Blue hover:text-P_Blue cursor-pointer"
+             :value="loading ? 'Loading' : 'Update'"
+             :disabled="loading"
+           />
           </div>
          
+        <textarea @click="saveToFile" placeholer="click to save " v-model="fileContent" class="bg-P_Blue p-3 text-slate-200 w-full h-full" placeholder="click inside the blue box to save"></textarea>
       </form>
     </div>
 
@@ -79,7 +79,7 @@ const handleLogin = async () => {
 
 
     if (error) throw error
-    alert('Signed In')
+    alert('Done')
   } catch (error) {
     if (error instanceof Error) {
       alert(error.message)

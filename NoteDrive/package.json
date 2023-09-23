@@ -1,25 +1,30 @@
 {
-  "name": "nuxt-app",
-  "private": true,
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "devDependencies": {
-    "@nuxt/devtools": "latest",
-    "@nuxtjs/google-fonts": "^3.0.2",
-    "@nuxtjs/tailwindcss": "^6.8.0",
-    "@types/node": "^18.17.3",
-    "nuxt": "^3.6.5",
-    "nuxt-icon": "^0.5.0"
-  },
-  "dependencies": {
-    "@supabase/supabase-js": "^2.33.1",
-    "marked": "^8.0.0",
-    "resend": "^1.1.0",
-    "vuex": "^4.1.0"
-  }
+    "name": "nuxt-app",
+    "private": true,
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare"
+    },
+    "devDependencies": {
+        "@nuxt/devtools": "latest",
+        "@nuxtjs/google-fonts": "^3.0.2",
+        "@nuxtjs/tailwindcss": "^6.8.0",
+        "@types/node": "^18.17.3",
+        "nuxt": "^3.6.5",
+        "nuxt-icon": "^0.5.0"
+    },
+    "dependencies": {
+        "@nuxt/types": "^2.17.1",
+        "@supabase/supabase-js": "^2.36.0",
+        "marked": "^8.0.0",
+        "pinia": "^2.1.6",
+        "resend": "^1.1.0",
+        "vuex": "^4.1.0"
+    },
+    "overrides": {
+        "vue": "latest"
+    }
 }
